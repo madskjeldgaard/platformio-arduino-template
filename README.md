@@ -44,6 +44,19 @@ Then open `platformio.ini` and make any additional adjustments.
 
 ## Usage
 
+To make a project based on this template, you can click on the `Use this template` button at the top of the page. 
+
+### Manually making a project based on this template
+
+If you don't want to use github, you can clone this project manually (so you can use it on [Codeberg](https://codeberg.org/) or another git repository):
+
+```bash
+git clone git@github.com:madskjeldgaard/platformio-arduino-template.git my-pio-arduino-project
+cd my-pio-arduino-project
+git remote remove origin
+git remote add origin <your_git_repo>
+```
+
 ### Compiling and uploading
 
 To compile and upload your sketch, simply run this command, adjusted to one of the supported boards, eg for Teensy 4.0:
