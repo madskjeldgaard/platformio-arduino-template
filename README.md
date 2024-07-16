@@ -2,7 +2,9 @@
 
 # The ⚡ULTIMATE⚡ Arduino starter template for Platformio 🐩
 
-This template sets up a nice skeleton to create a project for an arduino-supported microcontroller board using [platformio](https://platformio.org/).
+Starting a new project using the [arduino framework](https://www.arduino.cc/) in [platformio](https://platformio.org/) can be a mess, trying to get the right board matched with the right platform, matched with the right compiler flags to make USB work or getting the correct OSC library, etc.
+
+This template makes it easier to set up a nice skeleton to create a project for an arduino-supported microcontroller board using [platformio](https://platformio.org/).
 
 It has a lot of common things set up for most common boards used in the art/music/maker world, including a few optimizations and weird fixes. 
 
