@@ -35,5 +35,3 @@ jobs:
           author_name: Template Robot
           author_email: robot@example.com
           message: 'post-init: Fix setup new project'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
