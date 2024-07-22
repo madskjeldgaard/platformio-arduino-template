@@ -1,6 +1,13 @@
 name: PlatformIO CI
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'lib/**'
+      - 'test/**'
+      - 'platformio.ini'
 
 jobs:
   build:

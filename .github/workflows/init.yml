@@ -8,8 +8,6 @@ on: create
 jobs:
   # This workflow contains a single job called "build"
   build:
-    if: github.ref == 'refs/heads/master'
-
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -18,7 +16,12 @@ jobs:
 
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v3
+        # This step checks out the code in the repository
+        # so that it can be used in the following steps
+        # The code is checked out in the /github/workspace directory
+        # which is the default working directory for GitHub Actions
+        uses: actions/checkout@v3
+
 
         # Search and replace the original URL with the new github URL in the Readme.md file
         # The original url is https://github.com/madskjeldgaard/platformio-arduino-template
@@ -26,3 +29,12 @@ jobs:
       - name: Search and replace URL
         run: |
           sed -i 's|https://github.com/madskjeldgaard/platformio-arduino-template|${{ github.event.repository.html_url }}|g' README.md
+
+      - name: Stage changes
+        run: git add README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "post-init: Update README with new repository URL"
