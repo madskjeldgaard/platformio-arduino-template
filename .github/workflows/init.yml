@@ -20,7 +20,7 @@ jobs:
         # so that it can be used in the following steps
         # The code is checked out in the /github/workspace directory
         # which is the default working directory for GitHub Actions
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
 
         # Search and replace the original URL with the new github URL in the Readme.md file
@@ -30,7 +30,7 @@ jobs:
         run: |
           sed -i 's|https://github.com/madskjeldgaard/platformio-arduino-template|${{ github.event.repository.html_url }}|g' README.md
 
-      - uses: EndBug/add-and-commit@v4
+      - uses: EndBug/add-and-commit@v9
         with:
           author_name: Template Robot
           author_email: robot@example.com
