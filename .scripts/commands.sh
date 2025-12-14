@@ -187,7 +187,6 @@ function main() {
       shift
       build $@
       ;;
-
     add_board)
       add_new_board
       ;;
